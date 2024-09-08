@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; 
+    color: #e0e0e0; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.ticker-input {
+    width: 50px; 
+    padding: 5px; 
+    margin: 5px 0; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    text-transform: uppercase; 
+}
+
+.btn {
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #000000, #311a00);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+}
+
+.search-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.search-component input {
+    background-color: #333; 
+    color: #fff; 
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.search-component button {
+    background-color: #00b0ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.search-component button:hover {
+    background-color: #0091ea;
+}
+
+.data-display {
+    text-align: left;
+    margin-top: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    max-width:20em;
+}
+
+.data-display p {
+    display: flex;
+    font-weight: bold;
+    justify-content: space-between;
+
+}
+
+.fldValue {
+    color: #d16500;
+    font-weight: bold;
+    font-family:'Courier New', Courier, monospace;
+    text-align: right;
+    
+}
+
+.banner {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.crossed-out {
+    position: relative;
+    margin-right: 10px;
+    color: red;
+}
+
+.crossed-out::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    border-top: 4px solid black;
+    transform: translateY(-50%);
+}
+
+.dmitry-berg {
+    color: rgb(212, 85, 0);
+}

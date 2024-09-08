@@ -3,7 +3,11 @@ import SearchComponent from './SearchComponent';
 
 const App = () => {
     return (
-        <div>
+        <div className="container">
+            <div className="banner">
+                <span className="crossed-out">Bloomberg</span>
+                <span className="dmitry-berg">Dmitry-berg Terminal</span>
+            </div>
             <SearchComponent />
         </div>
     );

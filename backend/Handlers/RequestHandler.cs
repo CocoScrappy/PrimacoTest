@@ -13,7 +13,6 @@ namespace backend.Handlers
         public static async Task HandleRequest(HttpListenerContext context, DatabaseService databaseService, FinancialService financialService)
             {
                 var response = context.Response;
-                // Add CORS headers
                 response.Headers.Add("Access-Control-Allow-Origin", "*"); // Adjust this to your needs
                 response.Headers.Add("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
                 response.Headers.Add("Access-Control-Allow-Headers", "Content-Type");

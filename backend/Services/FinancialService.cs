@@ -14,11 +14,16 @@ namespace backend.Services
             var client = new HttpClient();
             var response = await client.GetStringAsync($"https://www.alphavantage.co/query?function=OVERVIEW&symbol={ticker}&apikey={Environment.GetEnvironmentVariable("ALPHA_VANTAGE_API")}");
             var json = JObject.Parse(response);
+            decimal? peRatio = null;
+            if (decimal.TryParse(json["PERatio"]?.ToString(), out var parsedPERatio))
+            {
+                peRatio = parsedPERatio;
+            }
             var companyData = new
             {
                 Name = json["Name"]?.ToString(),
                 MarketCap = json["MarketCapitalization"]?.ToString(),
-                PERatio = json["PERatio"]?.ToObject<decimal>(),
+                PERatio = peRatio,
                 Sector = json["Sector"]?.ToString(),
                 Industry = json["Industry"]?.ToString(),
             };
