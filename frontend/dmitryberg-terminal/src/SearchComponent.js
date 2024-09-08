@@ -6,13 +6,21 @@ const SearchComponent = () => {
     const [data, setData] = useState(null);
 
     const handleSearch = () => {
-        axios.get(`https://localhost:5000/api/search/${ticker}`)
+        axios.get(`http://localhost:5000/api/search/${ticker}`)
             .then(response => {
                 setData(response.data);
             })
             .catch(error => {
                 console.error('Error fetching financial data', error);
             });
+    };
+
+    const formatNumber = (number) => {
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'decimal',
+            maximumFractionDigits: 2, // Adjust as needed
+        });
+        return formatter.format(number);
     };
 
     return (
@@ -22,9 +30,9 @@ const SearchComponent = () => {
             {data && (
                 <div>
                     <p>Company: {data.Name}</p>
-                    <p>Price: {data.Price}</p>
-                    <p>Market Cap: {data.MarketCap}</p>
-                    <p>P/E Ratio: {data.PERatio}</p>
+                    <p>Market Cap: ${formatNumber(data.MarketCap)}</p>
+                    <p>P/E Ratio: {formatNumber(data.PERatio)}</p>
+                    <p>Sector: {data.Sector}</p>
                     <p>Industry: {data.Industry}</p>
                 </div>
             )}

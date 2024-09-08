@@ -17,10 +17,10 @@ namespace backend.Services
             var companyData = new
             {
                 Name = json["Name"]?.ToString(),
-                Industry = json["Industry"]?.ToString(),
+                MarketCap = json["MarketCapitalization"]?.ToString(),
+                PERatio = json["PERatio"]?.ToObject<decimal>(),
                 Sector = json["Sector"]?.ToString(),
-                MarketCapitalization = json["MarketCapitalization"]?.ToString(),
-                PERatio = json["PERatio"]?.ToObject<decimal>()
+                Industry = json["Industry"]?.ToString(),
             };
 
             return Newtonsoft.Json.JsonConvert.SerializeObject(companyData);
