@@ -45,6 +45,7 @@ const SearchComponent = () => {
                     <p><span>P/E Ratio:</span> <span className="fldValue">{formatNumber(data.PERatio)}</span></p>
                     <p><span>Sector:</span> <span className="fldValue">{data.Sector}</span></p>
                     <p><span>Industry:</span> <span className="fldValue">{data.Industry}</span></p>
+                    <p><span>Date:</span> <span className="fldValue">{data.SearchDate}</span></p>
                 </div>
             )}
         </div>
